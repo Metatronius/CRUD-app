@@ -4,7 +4,8 @@
   "description": "a CRUD application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint"
   },
   "repository": {
     "type": "git",
@@ -23,8 +24,14 @@
     "body-parser": "^1.15.2",
     "eslint": "^3.12.2",
     "express": "^4.14.0",
+    "knex": "^0.12.6",
     "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
     "pg": "^6.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0"
   }
 }
