@@ -17,14 +17,11 @@ router.get('/heroes', (_req, res, next) =>
     });
 });
 
-router.get('/heroes/:id', (req, res, next) =>
+router.get('/heroes/:name', (req, res, next) =>
 {
-  const id = req.params.id;
+  const name = req.params.id;
   knex('heroes')
-    .where(
-    {
-      name: id,
-    })
+    .where('name', name)
     .first()
     .then((result) =>
     {
@@ -35,3 +32,21 @@ router.get('/heroes/:id', (req, res, next) =>
       next(err);
     });
 });
+
+router.delete('heroes/:name', (req, res, next) =>
+{
+  const name = req.params.id;
+  knex('heroes')
+    .del()
+    .where('name', name)
+    .first()
+    .then((result) =>
+    {
+      res.send(result);
+    })
+    .catch((err) =>
+    {
+      next(err);
+    });
+});
+module.exports = router;
