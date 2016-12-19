@@ -51,10 +51,10 @@ exports.up = (knex) =>
     table.float('turn_rate')
       .notNullable()
       .defaultTo(0.5);
-    table.integer('base_attack_min')
+    table.integer('base_damage_min')
       .notNullable()
       .defaultTo(0);
-    table.integer('base_attack_max')
+    table.integer('base_damage_max')
       .notNullable()
       .defaultTo(0);
     table.integer('day_vision')
